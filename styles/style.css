@@ -2,18 +2,18 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: "wght" var(--main-font);
+  font-variation-settings: "wght" var(--font-main-wght);
   font-size: var(--main-size-font);
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: var(--page-background);
+  background-attachment: fixed;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60em;
-  background-size: cover;
-  background-attachment: fixed;
-  background-image: var(--page-background);
 }
 
 .header__content {
@@ -31,13 +31,13 @@
 
 .header__title {
   font-size: clamp(49px, 43.37px + 1.5vw, 65px);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
 }
 
 .header__subtitle {
   font-size: clamp(14px, 10.83px + 0.85vw, 23px);
   margin-top: 18px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   text-transform: uppercase;
 }
 
@@ -48,56 +48,46 @@
   max-block-size: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .main__content-bg-image-box {
   position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  object-fit: cover;
+  object-position: center;
   aspect-ratio: 1 / 1;
 }
 
 .main__content-bg-image-hand-watch {
-  background-image: url("../images/hand-watch.jpg");
   filter: contrast(50%);
 }
 
 .main__content-bg-image-long-watch {
-  background-image: url("../images/long-watch.jpg");
   filter: blur(1px);
 }
 
 .main__content-bg-image-old-watch {
-  background-image: url("../images/old-watch.jpg");
   filter: grayscale(0.8);
 }
 
 .main__content-bg-image-red-watch {
-  background-image: url("../images/red-watch.jpg");
   filter: saturate(158%);
 }
 
 .main__content-bg-image-retro-watch {
-  background-image: url("../images/retro-watch.jpg");
-  filter: grayscale(0.2), saturate(158%);
+  filter: grayscale(0.2) saturate(158%);
 }
 
 .main__content-bg-image-steel-watch {
-  background-image: url("../images/steel-watch.jpg");
   filter: invert(0.7);
 }
 
 .main__content-bg-image-street-tower-watch {
-  background-image: url("../images/street-tower-watch.jpg");
   filter: sepia(0.8) contrast(0.5) brightness(200%);
 }
 
-.main__content-bg-image-street-watch {
-  background-image: url("../images/street-watch.jpg");
-}
-
 .main__content_title {
+  font-variation-settings: "wght" var(--font-title-wght);
   padding: 4px 10px;
   font-size: 18px;
   border-bottom: var(--main-color) solid 2px;
@@ -129,21 +119,26 @@
 .card__icon-button:focus {
   outline: none;
 }
+
 .card__icon-button:focus-visible {
   outline: 2px solid var(--main-color);
 }
 
-.card__like-button {
+.main__content-button {
   background-color: var(--main-accent-color);
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  border: 2px solid var(--main-color);
+  position: relative;
+  font-size: var(--main-size-font-accent);
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+}
+
+.card__like-button {
   inline-size: 130px;
   block-size: 38px;
-  font-family: var(--accent-font);
-  border: 2px solid var(--main-color);
-  font-size: var(--main-size-font-accent);
-  transition: box-shadow 0.3s ease;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
 }
 
 .main__content-button-save {
@@ -151,26 +146,17 @@
   align-items: center;
   gap: 8px;
   padding: 17px 20px;
-  background-color: var(--main-accent-color);
-  cursor: pointer;
-  border: 2px solid var(--main-color);
-  transition: box-shadow 0.3s ease;
-  overflow: hidden;
-  position: relative;
 }
 
-.card__like-button:focus,
-.main__content-button-save:focus {
+.main__content-button:focus {
   outline: none;
 }
 
-.card__like-button:focus-visible,
-.main__content-button-save:focus-visible {
+.main__content-button:focus-visible {
   box-shadow: 2px 2px 0 var(--main-color);
 }
 
-.card__like-button::before,
-.main__content-button-save::before {
+.main__content-button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -180,18 +166,17 @@
   transition: 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before,
-.main__content-button-save:hover::before {
+.main__content-button:hover::before {
   transform: translateX(0);
   color: var(--main-accent-color);
   background-color: var(--main-accent-color);
 }
 
 .main__content-label {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   position: absolute;
   right: 25px;
-  top: 25px;
+  top: 55px;
   color: var(--main-color);
   opacity: 0.5;
   mix-blend-mode: hard-light;
@@ -215,8 +200,8 @@
   gap: 50px;
 }
 
-.main__content_first-offset {
-  margin-top: clamp(255px, 45%, 492px);
+.main__content_base-offset {
+  margin-top: 50px;
 }
 
 .end-margin {
@@ -234,13 +219,13 @@
 }
 
 .main__content_button-text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   transition: box-shadow 0.3s ease;
   overflow: hidden;
 }
 
-.moval-save__div {
+dialog[open] .modal-save__div {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -248,7 +233,7 @@
 }
 
 .modal-text {
-  width: 234px;
+  max-width: 234px;
   line-height: 150%;
 }
 
