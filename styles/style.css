@@ -13,4 +13,284 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--main-font);
+  font-size: var(--main-size-font);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60em;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: var(--page-background);
+}
+
+.header__content {
+  border: var(--main-color) solid 2px;
+  background: var(--main-accent-color);
+  min-inline-size: var(--main-inline-div);
+  max-block-size: clamp(327px, 55%, 368px);
+  padding: clamp(122px, 10%, 130px) clamp(12px, 3%, 122.5px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px 0;
+}
+
+.header__title {
+  font-size: clamp(49px, 43.37px + 1.5vw, 65px);
+  font-family: var(--accent-font);
+}
+
+.header__subtitle {
+  font-size: clamp(14px, 10.83px + 0.85vw, 23px);
+  margin-top: 18px;
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+}
+
+.main__content {
+  border: var(--main-color) solid 2px;
+  background: var(--main-accent-color);
+  max-inline-size: var(--main-inline-div);
+  max-block-size: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__content-bg-image-box {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.main__content-bg-image-hand-watch {
+  background-image: url("../images/hand-watch.jpg");
+  filter: contrast(50%);
+}
+
+.main__content-bg-image-long-watch {
+  background-image: url("../images/long-watch.jpg");
+  filter: blur(1px);
+}
+
+.main__content-bg-image-old-watch {
+  background-image: url("../images/old-watch.jpg");
+  filter: grayscale(0.8);
+}
+
+.main__content-bg-image-red-watch {
+  background-image: url("../images/red-watch.jpg");
+  filter: saturate(158%);
+}
+
+.main__content-bg-image-retro-watch {
+  background-image: url("../images/retro-watch.jpg");
+  filter: grayscale(0.2);
+  filter: saturate(158%);
+}
+
+.main__content-bg-image-steel-watch {
+  background-image: url("../images/steel-watch.jpg");
+  filter: invert(0.7);
+}
+
+.main__content-bg-image-street-tower-watch {
+  background-image: url("../images/street-tower-watch.jpg");
+  filter: sepia(0.8) contrast(0.5) brightness(200%);
+}
+
+.main__content-bg-image-street-watch {
+  background-image: url("../images/street-watch.jpg");
+}
+
+.main__content_title {
+  padding: 4px 10px;
+  font-size: 18px;
+  border-bottom: var(--main-color) solid 2px;
+}
+
+.main__content_text {
+  padding: 25px 25px 0 25px;
+}
+
+.main__content-control-card {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  padding: 17px 25px 25px 25px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 38px;
+  height: 34px;
+  margin-right: 7px;
+  transition: outline 0.3s ease;
+  outline: 2px solid transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--main-color);
+}
+
+.card__like-button {
+  background-color: var(--main-accent-color);
+  inline-size: 130px;
+  block-size: 38px;
+  font-family: var(--accent-font);
+  border: 2px solid var(--main-color);
+  font-size: var(--main-size-font-accent);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.main__content-button-save {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 17px 20px;
+  background-color: var(--main-accent-color);
+  cursor: pointer;
+  border: 2px solid var(--main-color);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__like-button:focus,
+.main__content-button-save:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible,
+.main__content-button-save:focus-visible {
+  box-shadow: 2px 2px 0 var(--main-color);
+}
+
+.card__like-button::before,
+.main__content-button-save::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--main-color);
+  transform: translateX(-100%);
+  mix-blend-mode: difference;
+  transition: 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before,
+.main__content-button-save:hover::before {
+  transform: translateX(0);
+  color: var(--main-accent-color);
+  background-color: var(--main-accent-color);
+}
+
+.main__content-label {
+  font-family: var(--accent-font);
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  color: var(--main-color);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: var(--text-shadow-label);
+}
+
+@supports (
+  (text-stroke: 1px var(--main-accent-color)) or
+    (-webkit-text-stroke: 1px var(--main-accent-color))
+) {
+  .main__content-label {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--main-accent-color);
+  }
+}
+
+.main__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.main__content_first-offset {
+  margin-top: clamp(255px, 45%, 492px);
+}
+
+.end-margin {
+  margin-bottom: 100px;
+}
+
+.main__content_svg-icon {
+  width: 21px;
+  height: 21px;
+}
+
+.main__content_svg-icon-modal {
+  width: 39px;
+  height: 39px;
+}
+
+.main__content_button-text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.moval-save__div {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.modal-text {
+  width: 234px;
+  line-height: 150%;
+}
+
+.button-modal {
+  display: block;
+  width: 100%;
+  padding: 12.5px 0;
+  margin-top: 30px;
+}
+
+dialog::backdrop {
+  background-color: rgb(0, 0, 0);
+  opacity: 0.75;
+}
+
+@media (width <= 374px) {
+  :root {
+    --main-inline-div: clamp(315px, 30%, 375px);
+  }
+
+  .header__content {
+    padding: 122px 5px;
+  }
+  .header__title {
+    font-size: 35px;
+  }
+}
+
+@media (width <= 380px) {
+  .main__content-button-save {
+    flex-direction: column;
+  }
 }

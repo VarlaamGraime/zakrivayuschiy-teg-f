@@ -1,1 +1,20 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: "Inter-Variable";
+  --accent-font: "PressStart2P";
+  --font-main-wght: "410";
+  --font-title-wght: "715";
+
+  --main-color: rgba(0, 0, 0, 1);
+  --main-accent-color: #fff;
+  --main-inline-div: clamp(375px, 70%, 700px);
+  --main-block-div: clamp(758px, 80%, 956px);
+  --main-size-font: 18px;
+  --main-size-font-accent: 14px;
+  --page-background:
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  --text-shadow-label:
+    -1px -1px 0 var(--main-accent-color), 1px -1px 0 var(--main-accent-color),
+    -1px 1px 0 var(--main-accent-color), 1px 1px 0 var(--main-accent-color);
+}
