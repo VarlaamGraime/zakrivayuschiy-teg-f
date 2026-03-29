@@ -80,8 +80,7 @@
 
 .main__content-bg-image-retro-watch {
   background-image: url("../images/retro-watch.jpg");
-  filter: grayscale(0.2);
-  filter: saturate(158%);
+  filter: grayscale(0.2), saturate(158%);
 }
 
 .main__content-bg-image-steel-watch {
