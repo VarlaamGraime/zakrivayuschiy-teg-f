@@ -1,13 +1,17 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font), sans-serif;
-  font-variation-settings: "wght" var(--font-main-wght);
-  font-size: var(--main-size-font);
+  font-family: var(--main-font, "Inter-Variable"), sans-serif;
+  font-variation-settings: "wght" var(--font-main-wght, 410);
+  font-size: var(--main-size-font, 18px);
   background-size: cover;
   background-attachment: fixed;
-  background-image: var(--page-background);
-  background-attachment: fixed;
+  background-image: var(
+    --page-background,
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%)
+  );
 }
 
 .header {
@@ -17,9 +21,9 @@
 }
 
 .header__content {
-  border: var(--main-color) solid 2px;
-  background: var(--main-accent-color);
-  min-inline-size: var(--main-inline-div);
+  border: var(--main-color, rgba(0, 0, 0, 1)) solid 2px;
+  background: var(--main-accent-color, #fff);
+  min-inline-size: var(--main-inline-div, clamp(375px, 70%, 700px));
   max-block-size: clamp(327px, 55%, 368px);
   padding: clamp(122px, 10%, 130px) clamp(12px, 3%, 122.5px);
   display: flex;
@@ -31,20 +35,20 @@
 
 .header__title {
   font-size: clamp(49px, 43.37px + 1.5vw, 65px);
-  font-family: var(--accent-font), fantasy;
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
 }
 
 .header__subtitle {
   font-size: clamp(14px, 10.83px + 0.85vw, 23px);
   margin-top: 18px;
-  font-family: var(--accent-font), fantasy;
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
   text-transform: uppercase;
 }
 
 .main__content {
-  border: var(--main-color) solid 2px;
-  background: var(--main-accent-color);
-  max-inline-size: var(--main-inline-div);
+  border: var(--main-color, rgba(0, 0, 0, 1)) solid 2px;
+  background: var(--main-accent-color, #fff);
+  max-inline-size: var(--main-inline-div, clamp(375px, 70%, 700px));
   max-block-size: 100%;
   display: flex;
   flex-direction: column;
@@ -56,6 +60,7 @@
   object-fit: cover;
   object-position: center;
   aspect-ratio: 1 / 1;
+  border-bottom: 2px var(--main-color, rgba(0, 0, 0, 1)) solid;
 }
 
 .main__content-bg-image-hand-watch {
@@ -86,22 +91,54 @@
   filter: sepia(0.8) contrast(0.5) brightness(200%);
 }
 
+.main__content-bg-image-hand-watch ~ .main__content-control-card {
+  padding: 23px 25px 25px 25px;
+}
+
+.main__content-bg-image-long-watch ~ .main__content-control-card {
+  padding: 29px 25px 25px 25px;
+}
+
+.main__content-bg-image-old-watch ~ .main__content-control-card {
+  padding: 29px 25px 25px 25px;
+}
+
+.main__content-bg-image-red-watch ~ .main__content-control-card {
+  padding: 26px 25px 25px 25px;
+}
+
+.main__content-bg-image-retro-watch ~ .main__content-control-card {
+  padding: 28px 25px 25px 25px;
+}
+
+.main__content-bg-image-steel-watch ~ .main__content-control-card {
+  padding: 28px 25px 25px 25px;
+}
+
+.main__content-bg-image-street-tower-watch ~ .main__content-control-card {
+  padding: 28px 25px 25px 25px;
+}
+
+.main__content-bg-image-street-watch ~ .main__content-control-card {
+  padding: 50px 25px 25px 25px;
+}
+
 .main__content_title {
-  font-variation-settings: "wght" var(--font-title-wght);
+  font-variation-settings: "wght" var(--font-title-wght, 715);
   padding: 4px 10px;
   font-size: 18px;
-  border-bottom: var(--main-color) solid 2px;
+  border-bottom: var(--main-color, rgba(0, 0, 0, 1)) solid 2px;
 }
 
 .main__content_text {
   padding: 25px 25px 0 25px;
+  line-height: 21px;
 }
 
 .main__content-control-card {
   display: flex;
   align-items: center;
   align-self: flex-end;
-  padding: 17px 25px 25px 25px;
 }
 
 .card__icon-button {
@@ -121,19 +158,18 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--main-color);
+  outline: 2px solid var(--main-color, rgba(0, 0, 0, 1));
 }
 
 .main__content-button {
-  background-color: var(--main-accent-color);
+  background-color: var(--main-accent-color, #fff);
   cursor: pointer;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
-  border: 2px solid var(--main-color);
+  border: 2px solid var(--main-color, rgba(0, 0, 0, 1));
   position: relative;
-  font-size: var(--main-size-font-accent);
-  font-family: var(--accent-font), fantasy;
-  font-size: 14px;
+  font-size: var(--main-size-font-accent, 14px);
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
 }
 
 .card__like-button {
@@ -153,14 +189,14 @@
 }
 
 .main__content-button:focus-visible {
-  box-shadow: 2px 2px 0 var(--main-color);
+  box-shadow: 2px 2px 0 var(--main-color, rgba(0, 0, 0, 1));
 }
 
 .main__content-button::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--main-color);
+  background-color: var(--main-color, rgba(0, 0, 0, 1));
   transform: translateX(-100%);
   mix-blend-mode: difference;
   transition: 0.5s ease-in-out;
@@ -168,28 +204,34 @@
 
 .main__content-button:hover::before {
   transform: translateX(0);
-  color: var(--main-accent-color);
-  background-color: var(--main-accent-color);
+  color: var(--main-accent-color, #fff);
+  background-color: var(--main-accent-color, #fff);
 }
 
 .main__content-label {
-  font-family: var(--accent-font), fantasy;
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
   position: absolute;
   right: 25px;
   top: 55px;
-  color: var(--main-color);
+  color: var(--main-color, rgba(0, 0, 0, 1));
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  text-shadow: var(--text-shadow-label);
+  text-shadow: var(
+    --text-shadow-label,
+    -1px -1px 0 var(--main-accent-color),
+    1px -1px 0 var(--main-accent-color),
+    -1px 1px 0 var(--main-accent-color),
+    1px 1px 0 var(--main-accent-color)
+  );
 }
 
 @supports (
-  (text-stroke: 1px var(--main-accent-color)) or
-    (-webkit-text-stroke: 1px var(--main-accent-color))
+  (text-stroke: 1px var(--main-accent-color, #fff)) or
+    (-webkit-text-stroke: 1px var(--main-accent-color, #fff))
 ) {
   .main__content-label {
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--main-accent-color);
+    -webkit-text-stroke-color: var(--main-accent-color, #fff);
   }
 }
 
@@ -219,7 +261,7 @@
 }
 
 .main__content_button-text {
-  font-family: var(--accent-font), fantasy;
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
   font-size: 14px;
   transition: box-shadow 0.3s ease;
   overflow: hidden;
@@ -249,6 +291,11 @@ dialog::backdrop {
   opacity: 0.75;
 }
 
+dialog {
+  border: none;
+  padding: 30px;
+}
+
 @media (width <= 374px) {
   :root {
     --main-inline-div: clamp(315px, 30%, 375px);
@@ -265,6 +312,37 @@ dialog::backdrop {
 @media (width <= 380px) {
   .main__content-button-save {
     flex-direction: column;
+  }
+  .main__content-bg-image-hand-watch ~ .main__content-control-card {
+    padding: 28px 25px 25px 25px;
+  }
+
+  .main__content-bg-image-long-watch ~ .main__content-control-card {
+    padding: 50px 25px 25px 25px;
+  }
+
+  .main__content-bg-image-old-watch ~ .main__content-control-card {
+    padding: 29px 25px 25px 25px;
+  }
+
+  .main__content-bg-image-red-watch ~ .main__content-control-card {
+    padding: 26px 25px 25px 25px;
+  }
+
+  .main__content-bg-image-retro-watch ~ .main__content-control-card {
+    padding: 28px 25px 25px 25px;
+  }
+
+  .main__content-bg-image-steel-watch ~ .main__content-control-card {
+    padding: 49px 25px 25px 25px;
+  }
+
+  .main__content-bg-image-street-tower-watch ~ .main__content-control-card {
+    padding: 48px 25px 25px 25px;
+  }
+
+  .main__content-bg-image-street-watch ~ .main__content-control-card {
+    padding: 50px 25px 25px 25px;
   }
 }
 
@@ -289,37 +367,37 @@ dialog::backdrop {
 }
 
 .like-icon:hover .core {
-  fill: var(--contour-color);
+  fill: var(--contour-color, rgba(0, 0, 0, 1));
   transition: fill 0.3s linear 0s;
 }
 
 .like-icon:hover .main-body {
-  fill: var(--contour-color);
+  fill: var(--contour-color, rgba(0, 0, 0, 1));
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, rgb(255, 0, 0));
   transition: fill 0.3s linear 0s;
 }
 
 .like-icon:active .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, rgb(255, 0, 0));
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, rgb(255, 0, 0));
   transition: fill 0.3s linear 0s;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, rgb(255, 0, 0));
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, rgb(255, 0, 0));
   transition: fill 0.3s linear 0.06s;
 }
 
