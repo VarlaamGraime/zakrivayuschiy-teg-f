@@ -61,6 +61,7 @@
   object-position: center;
   aspect-ratio: 1 / 1;
   border-bottom: 2px var(--main-color, rgba(0, 0, 0, 1)) solid;
+  width: 100%;
 }
 
 .main__content-bg-image-hand-watch {
@@ -91,35 +92,35 @@
   filter: sepia(0.8) contrast(0.5) brightness(200%);
 }
 
-.main__content-bg-image-hand-watch ~ .main__content-control-card {
+#hand-watch-img ~ .main__content-control-card {
   padding: 23px 25px 25px 25px;
 }
 
-.main__content-bg-image-long-watch ~ .main__content-control-card {
+#long-watch-img ~ .main__content-control-card {
   padding: 29px 25px 25px 25px;
 }
 
-.main__content-bg-image-old-watch ~ .main__content-control-card {
+#old-watch-img ~ .main__content-control-card {
   padding: 29px 25px 25px 25px;
 }
 
-.main__content-bg-image-red-watch ~ .main__content-control-card {
+#red-watch-img ~ .main__content-control-card {
   padding: 26px 25px 25px 25px;
 }
 
-.main__content-bg-image-retro-watch ~ .main__content-control-card {
+#retro-watch-img ~ .main__content-control-card {
   padding: 28px 25px 25px 25px;
 }
 
-.main__content-bg-image-steel-watch ~ .main__content-control-card {
+#steel-watch-img ~ .main__content-control-card {
   padding: 28px 25px 25px 25px;
 }
 
-.main__content-bg-image-street-tower-watch ~ .main__content-control-card {
+#street-tower-watch-img ~ .main__content-control-card {
   padding: 28px 25px 25px 25px;
 }
 
-.main__content-bg-image-street-watch ~ .main__content-control-card {
+#street-watch-img ~ .main__content-control-card {
   padding: 50px 25px 25px 25px;
 }
 
@@ -208,6 +209,13 @@
   background-color: var(--main-accent-color, #fff);
 }
 
+.main__content-group-image {
+  position: relative;
+  overflow: hidden;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+}
+
 .main__content-label {
   font-family: var(--accent-font, "PressStart2P"), fantasy;
   position: absolute;
@@ -242,10 +250,6 @@
   gap: 50px;
 }
 
-.main__content_base-offset {
-  margin-top: 50px;
-}
-
 .end-margin {
   margin-bottom: 100px;
 }
@@ -256,8 +260,7 @@
 }
 
 .main__content_svg-icon-modal {
-  width: 39px;
-  height: 39px;
+  max-width: 39px;
 }
 
 .main__content_button-text {
@@ -275,8 +278,9 @@ dialog[open] .modal-save__div {
 }
 
 .modal-text {
-  max-width: 234px;
+  max-width: 235px;
   line-height: 150%;
+  text-transform: uppercase;
 }
 
 .button-modal {
@@ -292,7 +296,7 @@ dialog::backdrop {
 }
 
 dialog {
-  border: none;
+  border: 2px solid var(--main-color);
   padding: 30px;
 }
 

@@ -18,16 +18,20 @@
         <span class="header__title">&lt;/HTML&gt;</span>
         <h1 class="header__subtitle">закрывающий тег</h1>
       </div>
+    </header>
+    <main class="main__section">
       <article class="main__content">
         <h2 class="main__content_title">
           Фритрек и нулевой спринт: Подготовка к работе
         </h2>
-        <img
-          src="./images/hand-watch.jpg"
-          class="main__content-bg-image-box main__content-bg-image-hand-watch"
-          alt="ручные часы "
-        />
-        <span class="main__content-label">Ожидание</span>
+        <div id="hand-watch-img" class="main__content-group-image">
+          <img
+            src="./images/hand-watch.jpg"
+            class="main__content-bg-image-box main__content-bg-image-hand-watch"
+            alt="ручные часы "
+          />
+          <span class="main__content-label">Ожидание</span>
+        </div>
         <p class="main__content_text">
           Это было самое начало пути. На этом этапе важно было проникнуться
           основами и настроиться на учёбу. И, возможно, подумать, как новые
@@ -75,17 +79,17 @@
           </button>
         </div>
       </article>
-    </header>
-    <main class="main__section main__content_base-offset">
       <article class="main__content">
         <h2 class="main__content_title">1 спринт: Я — чистый лист</h2>
-        <img
-          src="./images/long-watch.jpg"
-          class="main__content-bg-image-box main__content-bg-image-long-watch"
-          loading="lazy"
-          alt="высокое здание с часами"
-        />
-        <span class="main__content-label">Освоение</span>
+        <div id="long-watch-img" class="main__content-group-image">
+          <img
+            src="./images/long-watch.jpg"
+            class="main__content-bg-image-box main__content-bg-image-long-watch"
+            loading="lazy"
+            alt="высокое здание с часами"
+          />
+          <span class="main__content-label">Освоение</span>
+        </div>
         <p class="main__content_text">
           На первых этапах мы работали со страхами и сомнениями, которые часто
           испытывают новички. Один из них — страх перед чистым листом. Это,
@@ -134,14 +138,16 @@
         </div>
       </article>
       <article class="main__content">
-        <h3 class="main__content_title">1 спринт: А если не получится?</h3>
-        <img
-          src="./images/old-watch.jpg"
-          class="main__content-bg-image-box main__content-bg-image-old-watch"
-          loading="lazy"
-          alt="старые механические часы"
-        />
-        <span class="main__content-label">Адаптация</span>
+        <h2 class="main__content_title">1 спринт: А если не получится?</h2>
+        <div id="old-watch-img" class="main__content-group-image">
+          <img
+            src="./images/old-watch.jpg"
+            class="main__content-bg-image-box main__content-bg-image-old-watch"
+            loading="lazy"
+            alt="старые механические часы"
+          />
+          <span class="main__content-label">Адаптация</span>
+        </div>
         <p class="main__content_text">
           Первый проект — позади! Но это всё ещё самое начало пути. Радость
           могла быстро померкнуть и смениться ожиданием провала. Или вы,
@@ -188,14 +194,16 @@
         </div>
       </article>
       <article class="main__content">
-        <h3 class="main__content_title">2 спринт: Погоня за идеалом</h3>
-        <img
-          src="./images/red-watch.jpg"
-          class="main__content-bg-image-box main__content-bg-image-red-watch"
-          loading="lazy"
-          alt="красные часы будильник"
-        />
-        <span class="main__content-label">Свободное время</span>
+        <h2 class="main__content_title">2 спринт: Погоня за идеалом</h2>
+        <div id="red-watch-img" class="main__content-group-image">
+          <img
+            src="./images/red-watch.jpg"
+            class="main__content-bg-image-box main__content-bg-image-red-watch"
+            loading="lazy"
+            alt="красные часы будильник"
+          />
+          <span class="main__content-label">Свободное время</span>
+        </div>
         <p class="main__content_text">
           На этом этапе вы уже достаточно разбирались в основах вёрстки, чтобы
           понять, как много ещё впереди. Вы могли попытаться погнаться за
@@ -246,14 +254,16 @@
         </div>
       </article>
       <article class="main__content">
-        <h3 class="main__content_title">2 спринт: О тех, кто рядом</h3>
-        <img
-          src="./images/retro-watch.jpg"
-          class="main__content-bg-image-box main__content-bg-image-retro-watch"
-          loading="lazy"
-          alt="стильные ретро часы"
-        />
-        <span class="main__content-label">Самоуверенность</span>
+        <h2 class="main__content_title">2 спринт: О тех, кто рядом</h2>
+        <div id="retro-watch-img" class="main__content-group-image">
+          <img
+            src="./images/retro-watch.jpg"
+            class="main__content-bg-image-box main__content-bg-image-retro-watch"
+            loading="lazy"
+            alt="стильные ретро часы"
+          />
+          <span class="main__content-label">Самоуверенность</span>
+        </div>
         <p class="main__content_text">
           Всё это время вы были не одиноки (хотя, возможно, иногда и
           чувствовали, что одни против целого мира). Вас окружали одногруппники,
@@ -304,14 +314,16 @@
         </div>
       </article>
       <article class="main__content">
-        <h3 class="main__content_title">3 спринт: Обходные стратегии</h3>
-        <img
-          src="./images/steel-watch.jpg"
-          class="main__content-bg-image-box main__content-bg-image-steel-watch"
-          loading="lazy"
-          alt="металлические часы"
-        />
-        <span class="main__content-label">Цейтнот</span>
+        <h2 class="main__content_title">3 спринт: Обходные стратегии</h2>
+        <div id="steel-watch-img" class="main__content-group-image">
+          <img
+            src="./images/steel-watch.jpg"
+            class="main__content-bg-image-box main__content-bg-image-steel-watch"
+            loading="lazy"
+            alt="металлические часы"
+          />
+          <span class="main__content-label">Цейтнот</span>
+        </div>
         <p class="main__content_text">
           На этом курсе вы постоянно решали разные задачи. В какой-то момент вам
           могло показаться, что решения просто иссякли. Значит, пришло время
@@ -358,14 +370,16 @@
         </div>
       </article>
       <article class="main__content">
-        <h3 class="main__content_title">3 спринт: Когда опускаются руки</h3>
-        <img
-          src="./images/street-tower-watch.jpg"
-          class="main__content-bg-image-box main__content-bg-image-street-tower-watch"
-          loading="lazy"
-          alt="башня с часами"
-        />
-        <span class="main__content-label">Уныние</span>
+        <h2 class="main__content_title">3 спринт: Когда опускаются руки</h2>
+        <div id="street-tower-watch-img" class="main__content-group-image">
+          <img
+            src="./images/street-tower-watch.jpg"
+            class="main__content-bg-image-box main__content-bg-image-street-tower-watch"
+            loading="lazy"
+            alt="башня с часами"
+          />
+          <span class="main__content-label">Уныние</span>
+        </div>
         <p class="main__content_text">
           Во время учёбы часто возникает чувство, когда не знаешь, за что
           хвататься. Вроде и проектную пора сдавать, и задачи хочется порешать,
@@ -413,14 +427,16 @@
         </div>
       </article>
       <article class="main__content">
-        <h3 class="main__content_title">«Сейчас я здесь»</h3>
-        <img
-          src="./images/street-watch.jpg"
-          class="main__content-bg-image-box main__content-bg-image-street-watch"
-          loading="lazy"
-          alt="уличные часы"
-        />
-        <span class="main__content-label">Уверенность</span>
+        <h2 class="main__content_title">«Сейчас я здесь»</h2>
+        <div id="street-watch-img" class="main__content-group-image">
+          <img
+            src="./images/street-watch.jpg"
+            class="main__content-bg-image-box main__content-bg-image-street-watch"
+            loading="lazy"
+            alt="уличные часы"
+          />
+          <span class="main__content-label">Уверенность</span>
+        </div>
         <p class="main__content_text">
           Сейчас вы уже очень много знаете о вёрстке. Но это только начало.
           Во-первых, впереди ещё много материала про «красотищу». Во-вторых, с
